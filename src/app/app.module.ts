@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { BookReaderComponent } from './components/book-reader/book-reader.component';
+import { BookListenComponent } from './components/book-listen/book-listen.component';
+import { VideoComponent } from './components/video/video.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { BookReaderComponent } from './components/book-reader/book-reader.compon
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    BookReaderComponent
+    BookReaderComponent,
+    BookListenComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,

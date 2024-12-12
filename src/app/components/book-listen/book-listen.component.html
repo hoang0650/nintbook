@@ -1,38 +1,13 @@
-<div class="document-reader">
-    <!-- Top toolbar -->
-    <div class="toolbar">
-        <button class="icon-button" (click)="zoomOut()">
-            <i class="fas fa-search-minus"></i>
-        </button>
-        <span class="zoom-level">{{ zoomLevel }}%</span>
-        <button class="icon-button" (click)="zoomIn()">
-            <i class="fas fa-search-plus"></i>
-        </button>
-        <button class="icon-button" (click)="downloadDocument()">
-            <i class="fas fa-download"></i>
-        </button>
-        <button class="icon-button" (click)="toggleWatchlist()" [class.active]="inWatchlist">
-            <i class="fas fa-list"></i>
-        </button>
-    </div>
+<div class="listening-practice-container">
+    <h2>German Listening Practice</h2>
 
-    <!-- Content area -->
-    <div class="content-area" [style.fontSize.%]="zoomLevel">
-        {{ content }}
-    </div>
+    <audio #audioPlayer [src]="audioSrc" (timeupdate)="onTimeUpdate()" controls></audio>
 
-    <!-- Pagination -->
-    <div class="pagination">
-        <button class="nav-button" (click)="previousPage()" [disabled]="currentPage === 1">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
-        <button class="nav-button" (click)="nextPage()" [disabled]="currentPage === totalPages">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        <button class="bookmark-button" (click)="toggleBookmark()" [class.active]="isCurrentPageBookmarked()">
-            <i class="fas fa-bookmark"></i>
-        </button>
+    <div class="transcript-container">
+        <p *ngFor="let segment of transcript; let i = index" [class.highlighted]="isHighlighted(i)"
+            (click)="seekToSegment(i)">
+            {{ segment.text }}
+        </p>
     </div>
 </div>
 
