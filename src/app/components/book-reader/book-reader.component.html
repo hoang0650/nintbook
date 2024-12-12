@@ -1,0 +1,131 @@
+<div class="document-reader">
+    <!-- Top toolbar -->
+    <div class="toolbar">
+      <button class="icon-button" (click)="zoomOut()">
+        <i class="fas fa-search-minus"></i>
+      </button>
+      <span class="zoom-level">{{ zoomLevel }}%</span>
+      <button class="icon-button" (click)="zoomIn()">
+        <i class="fas fa-search-plus"></i>
+      </button>
+      <button class="icon-button" (click)="downloadDocument()">
+        <i class="fas fa-download"></i>
+      </button>
+      <button class="icon-button" (click)="toggleWatchlist()" [class.active]="inWatchlist">
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
+  
+    <!-- Content area -->
+    <div class="content-area" [style.fontSize.%]="zoomLevel">
+      {{ content }}
+    </div>
+  
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="nav-button" (click)="previousPage()" [disabled]="currentPage === 1">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
+      <button class="nav-button" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <button class="bookmark-button" (click)="toggleBookmark()" [class.active]="isCurrentPageBookmarked()">
+        <i class="fas fa-bookmark"></i>
+      </button>
+    </div>
+  </div>
+  
+  
+<section id="special-offer" class="bookshelf pb-5 mb-5">
+
+    <div class="section-header align-center">
+        <div class="title">
+            <span>Grab your opportunity</span>
+        </div>
+        <h2 class="section-title">Books with offer</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="inner-content">
+                <div class="product-list" data-aos="fade-up">
+                    <div class="grid product-grid">
+                        <div class="product-item">
+                            <figure class="product-style">
+                                <img src="images/product-item5.jpg" alt="Books" class="product-item">
+                                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
+                                    Cart</button>
+                            </figure>
+                            <figcaption>
+                                <h3>Simple way of piece life</h3>
+                                <span>Armor Ramsey</span>
+                                <div class="item-price">
+                                    <span class="prev-price">$ 50.00</span>$ 40.00
+                                </div>
+                            </figcaption>
+                        </div>
+
+                        <div class="product-item">
+                            <figure class="product-style">
+                                <img src="images/product-item6.jpg" alt="Books" class="product-item">
+                                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
+                                    Cart</button>
+                            </figure>
+                            <figcaption>
+                                <h3>Great travel at desert</h3>
+                                <span>Sanchit Howdy</span>
+                                <div class="item-price">
+                                    <span class="prev-price">$ 30.00</span>$ 38.00
+                                </div>
+                            </figcaption>
+                        </div>
+
+                        <div class="product-item">
+                            <figure class="product-style">
+                                <img src="images/product-item7.jpg" alt="Books" class="product-item">
+                                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
+                                    Cart</button>
+                            </figure>
+                            <figcaption>
+                                <h3>The lady beauty Scarlett</h3>
+                                <span>Arthur Doyle</span>
+                                <div class="item-price">
+                                    <span class="prev-price">$ 35.00</span>$ 45.00
+                                </div>
+                            </figcaption>
+                        </div>
+
+                        <div class="product-item">
+                            <figure class="product-style">
+                                <img src="images/product-item8.jpg" alt="Books" class="product-item">
+                                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
+                                    Cart</button>
+                            </figure>
+                            <figcaption>
+                                <h3>Once upon a time</h3>
+                                <span>Klien Marry</span>
+                                <div class="item-price">
+                                    <span class="prev-price">$ 25.00</span>$ 35.00
+                                </div>
+                            </figcaption>
+                        </div>
+
+                        <div class="product-item">
+                            <figure class="product-style">
+                                <img src="images/product-item2.jpg" alt="Books" class="product-item">
+                                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to
+                                    Cart</button>
+                            </figure>
+                            <figcaption>
+                                <h3>Simple way of piece life</h3>
+                                <span>Armor Ramsey</span>
+                                <div class="item-price">$ 40.00</div>
+                            </figcaption>
+                        </div>
+                    </div><!--grid-->
+                </div>
+            </div><!--inner-content-->
+        </div>
+    </div>
+</section>
