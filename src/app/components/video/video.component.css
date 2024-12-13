@@ -75,5 +75,39 @@
     color: #666;
     margin-top: 5px;
   }
+
+  @media (max-width: 480px) {
+    .subtitle {
+      font-size: 14px;
+      bottom: 5%;
+    }
+  }
+  
+  /* Responsive design for mobile */
+  @media (max-width: 768px) {
+    .video-player-container {
+      max-width: 100%;
+      padding: 0 10px;
+    }
+  
+    .video-wrapper {
+      padding-top: 75%; /* 4:3 Aspect Ratio for mobile */
+    }
+  
+    .controls {
+      flex-direction: column;
+    }
+  
+    .control-button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    .seek-bar,
+    .volume-control {
+      flex-basis: 100%;
+    }
+  }
+  
   
   

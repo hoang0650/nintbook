@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { BookReaderComponent } from './components/book-reader/book-reader.component';
 import { BookListenComponent } from './components/book-listen/book-listen.component';
 import { VideoComponent } from './components/video/video.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { VideoComponent } from './components/video/video.component';
     HomeComponent,
     BookReaderComponent,
     BookListenComponent,
-    VideoComponent
+    VideoComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

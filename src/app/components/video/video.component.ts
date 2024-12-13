@@ -31,6 +31,7 @@ export class VideoComponent implements OnInit {
   volume: number = 1;
   playbackRate: number = 1;
   showTranslation: boolean = false;
+  zoomLevel: number = 1;
 
   ngOnInit() {
     // Initialize component
@@ -83,4 +84,36 @@ export class VideoComponent implements OnInit {
     this.showTranslation = !this.showTranslation;
   }
 
+  zoomIn() {
+    this.zoomLevel = Math.min(this.zoomLevel + 0.1, 2);
+    this.applyZoom();
+  }
+
+  zoomOut() {
+    this.zoomLevel = Math.max(this.zoomLevel - 0.1, 0.5);
+    this.applyZoom();
+  }
+
+  applyZoom() {
+    if (this.videoPlayer) {
+      this.videoPlayer.nativeElement.style.transform = `scale(${this.zoomLevel})`;
+    }
+  }
+
+  nextPage() {
+    // Implement next page logic here
+    console.log('Next page');
+  }
+
+  previousPage() {
+    // Implement previous page logic here
+    console.log('Previous page');
+  }
+
+  handleTouchStart(event: TouchEvent) {
+    // Prevent default touch behavior
+    event.preventDefault();
+    // Toggle translation
+    this.toggleTranslation();
+  }
 }

@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="book-detail">
+        <!-- Left Column - Book Image -->
+        <div class="book-image">
+            <img src="images/main-banner1.jpg" alt="Book Cover">
+        </div>
+
+        <!-- Right Column - Book Details -->
+        <div class="book-info">
+            <!-- Language Level -->
+            <span class="badge">{{ book.languageLevel }}</span>
+
+            <!-- Categories -->
+            <div class="categories">
+                <p>{{ book.categories.join(', ') }}</p>
+            </div>
+
+            <!-- Author -->
+            <h2 class="author">{{ book.author }}</h2>
+
+            <!-- Title -->
+            <h1 class="title">{{ book.title }}</h1>
+            <!-- <p class="subtitle">{{ book.subtitle }}</p> -->
+
+            <!-- ISBN -->
+            <p class="isbn">
+                <span>ISBN</span> {{ book.isbn }}
+            </p>
+
+            <!-- Availability -->
+            <div class="availability" [ngClass]="{'available': book.available, 'unavailable': !book.available}">
+                <div class="status-dot"></div>
+                <span>{{ book.available ? 'lieferbar' : 'nicht lieferbar' }}</span>
+            </div>
+
+            <!-- Price and Order Section -->
+            <div class="order-card section-spacing">
+                <div class="order-main">
+                    <div class="price">{{ book.price | currency:'EUR':'symbol':'1.2-2' }}</div>
+                    <div class="order-controls">
+                        <input type="number" class="quantity-input">
+                        <button (click)="onOrder()" class="order-button">
+                            <i class="fas fa-shopping-cart"></i> BESTELLEN
+                        </button>
+                    </div>
+                </div>
+                <p class="tax-info">inkl. MwSt., zzgl. Versand</p>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info section-spacing">
+                <div>
+                    <p class="label">Genre:</p>
+                    <p class="value">{{ book.genre }}</p>
+                </div>
+                <div>
+                    <p class="label">Themen:</p>
+                    <p class="value">{{ book.themes.join(', ') }}</p>
+                </div>
+            </div>
+
+            <!-- Shipping Information -->
+            <a href="#" class="shipping-info section-spacing">Versandkosten & Lieferzeiten</a>
+        </div>
+    </div>
+</div>
